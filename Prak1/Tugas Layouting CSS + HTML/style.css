@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background-color:white;
+}
+
+.head {
+    text-align: center;
+    width: 784px;
+    height: 200px;
+    background-color: rgb(209, 196, 196);
+}
+
+.head img {
+    width: 500px;
+    height: 200px;
+}
+
+.navi {
+    float: left;
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    background-color: yellow;
+}
+
+.navi a {
+    margin-left: 40%;
+    text-decoration: none;
+}
+
+.menu {
+    float: left;
+    margin-left: 200px;
+    height: 100%;
+    width: 584px;
+    background-color: rgb(216, 131, 163);
+}
+
+.menu p {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    width: 784px;
+    height: 100px;   
+}
+
+footer h2 {
+    background-color: rgb(174, 123, 204);
+}
