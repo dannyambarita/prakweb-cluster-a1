@@ -8,15 +8,15 @@
 
     for ($bilangan = 1; $bilangan <= 50; $bilangan++) {
         $nomor = 0;
-        for ($angka = 1; $angka < $bilangan; $angka++) {
+        for ($angka = 1; $angka <= $bilangan; $angka++) {
             if ($bilangan % $angka == 0) {
                 $nomor++;
             }
         }
         if ($nomor == 2) {
-            echo "angka " . $angka . "  bilangan prima<br>";
+            echo "angka " . $bilangan . "  bilangan prima<br>";
         } else {
-            echo "angka " . $angka . "  bukan bilangan prima<br>";
+            echo "angka " . $bilangan . "  bukan bilangan prima<br>";
         }
     }
 
