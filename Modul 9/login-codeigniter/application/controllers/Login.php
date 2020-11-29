@@ -1,0 +1,40 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Login extends CI_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Model', 'model_model');
+    }
+
+    public function index()
+    {
+        $data['user'] = $this->db->get('user')->result_array();
+        if ($this->session->userdata('email')) {
+            redirect('user');
+        }
+        $this->load->view('login/index', $data);
+    }
+
+    public function cekLogin()
+    {
+        $username = $this->input->post('user_name');
+        $password = $this->input->post('password');
+
+        $getUser = $this->model_model->getUsername($username);
+
+        if ($getUser) {
+            $data = [
+                'username' => $username,
+                'loggedin_time' => time()
+            ];
+            $this->session->set_userdata($data);
+            redirect('user');
+        } else {
+            $this->session->set_flashdata('message', '<p>User Tidak Terdaftar</p>');
+            redirect('login');
+        }
+    }
+}
